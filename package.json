@@ -8,7 +8,7 @@
     "build": "ncc build -o dist/setup src/setup-node.ts && ncc build -o dist/cache-save src/cache-save.ts",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "test": "jest",
+    "test": "jest __tests__/installer.test.ts --verbose false",
     "pre-checkin": "npm run format && npm run build && npm test"
   },
   "repository": {
@@ -30,8 +30,8 @@
     "@actions/glob": "^0.2.0",
     "@actions/http-client": "^1.0.11",
     "@actions/io": "^1.0.2",
-    "@actions/tool-cache": "^1.5.4",
-    "semver": "^6.1.1"
+    "semver": "^6.1.1",
+    "tool-cache-mirror": "^1.0.1"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",

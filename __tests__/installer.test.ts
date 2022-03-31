@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import * as io from '@actions/io';
-import * as tc from '@actions/tool-cache';
+import * as tc from 'tool-cache-mirror';
 import fs from 'fs';
 import cp from 'child_process';
 import osm = require('os');
