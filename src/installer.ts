@@ -347,7 +347,8 @@ function evaluateVersions(versions: INodeVersion[], versionSpec: string): string
     const semverPotential = semver.coerce(potential);
         if (semverPotential === null)
             continue;
-    const satisfied: boolean = semver.satisfies(potential, versionSpec);
+    // 使用 includePrerelease 开启 rc 版本匹配，例如 12.x 将会匹配 v12.22.12-rc.0            
+    const satisfied: boolean = semver.satisfies(potential, versionSpec, { includePrerelease: true });
     if (satisfied) {
       version = potential;
       break;
